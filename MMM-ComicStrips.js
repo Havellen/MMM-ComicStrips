@@ -1,13 +1,11 @@
+/* eslint-disable */
 Module.register("MMM-ComicStrips", {
 
     // Default module config.
     defaults: {
-      comic: "dilbert",         // Choose between  ["dilbert", "xkcd", "garfield", "peanuts", "nichtlustig", "ruthe", "dilbert_de"]
+      comic: ["pondus", "lunch"],         // Choose between  ["pondus", "lunch"]
       updateInterval : 1000 * 60 * 1,  // 1 hour
-      random: false,                // choose random comic each time (include an option to show daily comic at specific time!)
-      coloredImage: false,
-      comicWidth: 500,
-      timeForDaily: [7, 23]
+      comicWidth: 500
     },
 
     start: function() {
@@ -43,7 +41,7 @@ Module.register("MMM-ComicStrips", {
     socketNotificationReceived: function(notification, payload) {
         if (notification === "COMIC") {
             this.dailyComic = payload.img;
-            console.log("Comic source: "+this.dailyComic);
+            console.log("Comic source: " + this.dailyComic);
             this.updateDom(1000);
         }
     },
@@ -64,8 +62,6 @@ Module.register("MMM-ComicStrips", {
         }
       	if (this.config.coloredImage) {
       		img.className = 'colored-image';
-      	} else {
-      		img.className = 'bw-image';
       	};
 	      comicWrapper.appendChild(img);
         wrapper.appendChild(comicWrapper);
