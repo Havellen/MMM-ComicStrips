@@ -1,6 +1,9 @@
 # MMM-ComicStrips
 Based on andrecarluccis MMM-DailyDilbert module, this is a module for MagicMirror<sup>2</sup> that displays daily or random Comic Strips from famous comics.
 
+https://www.vg.no/tegneserier/api/images/pondus/2019-08-06.webp
+https://www.vg.no/tegneserier/api/images/lunch/2019-08-06.webp
+
 <img src="dilbert.png"></img>
 
 ## Dependencies
